@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luz de la Palabra</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fcf8f2;
+      color: #334155;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .sidebar-header {
+      padding: 0 24px 20px 24px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .sidebar-header h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #38bdf8;
+      text-transform: uppercase;
+    }
+
+    .nav-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .nav-item a {
+      display: block;
+      padding: 12px 24px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .nav-item a:hover,
+    .nav-item a.active {
+      background-color: #1e293b;
+      color: #38bdf8;
+      border-left-color: #38bdf8;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      height: 100%;
+      background-color: #fcf8f2; /* Fondo cálido para coincidir con las páginas */
+    }
+
+    /* Frame de lectura */
+    .reader-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #fcf8f2;
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Libros</h2>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="libros/genesis.html" target="visor" class="active">Génesis</a></li>
+      <li class="nav-item"><a href="libros/mateo.html" target="visor">Mateo</a></li>
+      <li class="nav-item"><a href="libros/juan.html" target="visor">Juan</a></li>
+      <li class="nav-item"><a href="libros/hechos.html" target="visor">Hechos de los Apóstoles</a></li>
+      <li class="nav-item"><a href="libros/romanos.html" target="visor">Romanos</a></li>
+      <li class="nav-item"><a href="libros/galatas.html" target="visor">Gálatas</a></li>
+      <li class="nav-item"><a href="libros/colosenses.html" target="visor">Colosenses</a></li>
+      <li class="nav-item"><a href="libros/2corintios.html" target="visor">2 Corintios</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <iframe name="visor" src="libros/genesis.html" class="reader-frame"></iframe>
+  </main>
+
+  <script>
+    const links = document.querySelectorAll('.nav-item a');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

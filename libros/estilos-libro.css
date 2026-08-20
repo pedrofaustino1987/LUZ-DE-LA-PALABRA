@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fcf8f2;
+  color: #2c221e;
+  font-family: 'Merriweather', Georgia, serif;
+  padding: 40px 60px;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #1a0f0a;
+  border-bottom: 2px solid #e2d7c7;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Números de versículos */
+sup {
+  color: #b45309;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-right: 2px;
+  margin-left: 6px;
+}
+
+/* Letra capitular al inicio del capítulo */
+p::first-letter {
+  font-size: 2.6rem;
+  font-weight: bold;
+  float: left;
+  line-height: 1;
+  margin-right: 8px;
+  color: #1a0f0a;
+}
+
+/* Estilos del Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.modal-contenido {
+  background-color: #ffffff;
+  margin: 8% auto;
+  padding: 25px;
+  border-radius: 8px;
+  width: 85%;
+  max-width: 650px;
+  max-height: 75vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.cerrar-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+
+.cerrar-btn:hover {
+  color: #000;
+}
